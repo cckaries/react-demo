@@ -1,0 +1,29 @@
+.Button {
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  color: white;
+  outline: none;
+  font: inherit;
+  font-weight: bold;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:first-of-type {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  &:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+  }
+}
+
+.Success {
+  color: #5C9210;
+}
+
+.Danger {
+  color: #944317;
+}

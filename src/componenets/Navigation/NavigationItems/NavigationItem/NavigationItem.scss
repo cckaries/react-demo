@@ -1,0 +1,45 @@
+.NavigationItem {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  box-sizing: border-box;
+
+  a {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    color: #8f5c2c;
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    &.active {
+      color: #40a4c8;
+    }
+  }
+}
+
+@media (min-width: 500px) {
+  .NavigationItem {
+    display: flex;
+    height: 100%;
+    width: auto;
+    margin: 0;
+    align-items: center;
+
+    a {
+      color: white;
+      height: 100%;
+      padding: 16px 10px;
+      border-bottom: 4px solid transparent;
+
+      &:hover,
+      &:active,
+      &.active {
+        background-color: #8f5c2c;
+        border-bottom: 4px solid #40a4c8;
+        color: white;
+      }
+    }
+  }
+}

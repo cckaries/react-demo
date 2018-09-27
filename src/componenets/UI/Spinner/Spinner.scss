@@ -1,0 +1,77 @@
+@mixin set-bg-gradient($c1, $c2) {
+  background: $c1;
+  background: -moz-linear-gradient(left, $c1 10%, $c2 42%);
+  background: -webkit-linear-gradient(left, $c1 10%, $c2 42%);
+  background: -o-linear-gradient(left, $c1 10%, $c2 42%);
+  background: -ms-linear-gradient(left, $c1 10%, $c2 42%);
+  background: linear-gradient(to right, $c1 10%, $c2 42%);
+}
+
+@mixin set-animation($name, $time, $options:"infinite linear") {
+  -webkit-animation: $name $time #{$options};
+  animation: $name $time #{$options};
+}
+
+@mixin set-transform($value) {
+  -webkit-transform: $value;
+  -ms-transform: $value;
+  transform: $value;
+}
+
+.Loader {
+  position: relative;
+  width: 11em;
+  height: 11em;
+  font-size: 10px;
+  margin: 50px auto;
+  text-indent: -9999em;
+  border-radius: 50%;
+  @include set-bg-gradient(#ffc84a, rgba(#ffc84a, 0));
+  @include set-animation(load3, 1.4s);
+  @include set-transform(translateZ(0));
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    content: '';
+    background: #ffc84a;
+    border-radius: 100% 0 0 0;
+  }
+
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 75%;
+    height: 75%;
+    margin: auto;
+    content: '';
+    background: #fff;
+    border-radius: 50%;
+  }
+}
+
+@-webkit-keyframes load3 {
+  0% {
+    @include set-transform(rotate(0deg));
+  }
+
+  100% {
+    @include set-transform(rotate(360deg));
+  }
+}
+
+@keyframes load3 {
+  0% {
+    @include set-transform(rotate(0deg));
+  }
+
+  100% {
+    @include set-transform(rotate(360deg));
+  }
+}

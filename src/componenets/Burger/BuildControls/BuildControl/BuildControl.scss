@@ -1,0 +1,65 @@
+$button-bg-color-disabled: #AC9980;
+$button-color-disabled: #ccc;
+$button-color: white;
+
+.ext-button {
+  color: $button-color;
+}
+
+.ext-button-diabled {
+  background-color: $button-bg-color-disabled;
+  color: $button-color-disabled;
+}
+
+.BuildControl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+
+  button {
+    display: block;
+    font: inherit;
+    padding: 5px;
+    margin: 0 5px;
+    width: 80px;
+    border: 1px solid #AA6817;
+    cursor: pointer;
+    outline: none;
+
+    &:disabled {
+      @extend .ext-button-diabled;
+      border: 1px solid #7E7365;
+      cursor: default;
+    }
+
+    &:hover:disabled {
+      @extend .ext-button-diabled;
+      cursor: not-allowed;
+    }
+  }
+
+  .Less {  
+    @extend .ext-button;
+    background-color: #D39952;
+
+    &:hover, &:active {
+      background-color: #DAA972;
+    }
+  }
+
+  .More {
+    @extend .ext-button;
+    background-color: #8F5E1E;
+
+    &:hover, &:active {
+      background-color: #99703F;
+    }
+  }
+}
+
+.Label {
+  width: 80px;
+  padding: 10px;
+  font-weight: bold;
+}
