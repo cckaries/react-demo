@@ -25,12 +25,13 @@ export function* authUserSaga(action) {
     returnSecureToken: true
   };
 
+  let key = process.env.API_KEY;
   let url =
-    'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyBIzT3GO-jaZT0dzwf1ysdbN1cnwG-teP0';
+    'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=' + key;
 
   if (!action.isSignup) {
     url =
-      'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyBIzT3GO-jaZT0dzwf1ysdbN1cnwG-teP0';
+      'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=' + key;
   }
 
   try {

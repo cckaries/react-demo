@@ -48,7 +48,7 @@ export const auth = (email, password, isSignup) => {
     type: actionTypes.AUTH_USER,
     email: email,
     password: password,
-    isSignup: isSignup
+    isSignup: isSignup,
   }
 };
 
